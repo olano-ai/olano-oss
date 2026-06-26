@@ -12,6 +12,19 @@ fi
 cd "$PKG_DIR"
 rm -rf dist build *.egg-info src/*.egg-info
 
-python -m pip install --upgrade build twine
-python -m build
-python -m twine upload --username __token__ --password "$PYPI_API_TOKEN" dist/*
+PYTHON_BIN="${PYTHON_BIN:-python}"
+if ! "$PYTHON_BIN" -m pip --version >/dev/null 2>&1; then
+  if command -v python3 >/dev/null 2>&1 && python3 -m pip --version >/dev/null 2>&1; then
+    PYTHON_BIN="python3"
+  elif [[ -x /usr/bin/python3 ]] && /usr/bin/python3 -m ensurepip --version >/dev/null 2>&1; then
+    PYTHON_BIN="/usr/bin/python3"
+    "$PYTHON_BIN" -m ensurepip --user
+  else
+    echo "No Python executable with pip available. Set PYTHON_BIN to a Python with pip." >&2
+    exit 1
+  fi
+fi
+
+"$PYTHON_BIN" -m pip install --user --upgrade build twine
+"$PYTHON_BIN" -m build
+"$PYTHON_BIN" -m twine upload --username __token__ --password "$PYPI_API_TOKEN" dist/*
