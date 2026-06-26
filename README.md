@@ -20,3 +20,22 @@ packages/
 ## Status
 
 Placeholder only. Do not use in production yet.
+
+## Publishing
+
+The repository includes publish scripts for reserving the package names on npm and PyPI.
+
+Required environment variables:
+
+- `NPM_TOKEN`
+- `PYPI_API_TOKEN`
+
+Commands:
+
+```bash
+scripts/publish-npm.sh
+scripts/publish-pypi.sh
+scripts/publish-all.sh
+```
+
+The scripts read tokens from environment variables only. They do not store credentials in the repository.
