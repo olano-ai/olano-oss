@@ -28,4 +28,5 @@ fi
 
 "$PYTHON_BIN" -m pip install --upgrade build twine
 "$PYTHON_BIN" -m build
-"$PYTHON_BIN" -m twine upload --username __token__ --password "$PYPI_API_TOKEN" dist/*
+"$PYTHON_BIN" -m twine check dist/*
+"$PYTHON_BIN" -m twine upload --non-interactive --username __token__ --password "$PYPI_API_TOKEN" dist/*

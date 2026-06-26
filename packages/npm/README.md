@@ -1,3 +1,7 @@
-# olano npm package
+# @olano/olano
 
-Placeholder for the future Olano npm package.
+Placeholder for the future Olano npm package, published under the `@olano` org.
+
+```bash
+npm install @olano/olano
+```

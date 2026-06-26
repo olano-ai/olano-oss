@@ -1,5 +1,5 @@
 {
-  "name": "olano",
+  "name": "@olano/olano",
   "version": "0.0.0",
   "description": "Placeholder package for Olano open-source npm distribution.",
   "private": false,

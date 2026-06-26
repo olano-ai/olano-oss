@@ -1,3 +1,7 @@
-# olano Python package
+# olano
 
-Placeholder for the future Olano PyPI package.
+Placeholder for the future Olano Python package.
+
+```bash
+pip install olano
+```
