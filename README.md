@@ -23,7 +23,7 @@ Placeholder only. Do not use in production yet.
 
 ## Publishing
 
-The repository includes publish scripts for reserving the package names on npm and PyPI.
+The repository includes publish scripts for reserving the package names on npm and PyPI as `olano`.
 
 Required environment variables:
 
